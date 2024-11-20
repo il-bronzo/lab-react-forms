@@ -16,15 +16,31 @@ function App() {
   const [email, setEmail] = useState("");
   const [program, setProgram] = useState("-- None --");
   const [graduationYear, setGraduationYear] = useState(2023);
-  const [graduated, setGraduated] = useState("false");
+  const [graduated, setGraduated] = useState(false);
 
+  function handleSubmit(submit) {
+    submit.preventDefault();
+
+    const newStudent = {
+      fullName: name,
+      email: email,
+      phone: tel,
+      program: program,
+      image: image,
+      graduationYear: graduationYear,
+      graduated: graduated
+    };
+
+    const studentsCopy = [... students];
+    studentsCopy.push(newStudent);
+  }
 
   return (
     <div className="App pt-20">
       <Navbar />
 
       {/* FORM */}
-      <form>
+      <form onSubmit = {handleSubmit}> {/* onSubmit to be put here and not inside the button of type="sumbit" */}
         <span>Add a Student</span>
         <div>
           <label>
