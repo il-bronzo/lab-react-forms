@@ -16,7 +16,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [program, setProgram] = useState("-- None --");
   const [graduationYear, setGraduationYear] = useState(2023);
-  const [graduated, setGraduate] = useState("false");
+  const [graduated, setGraduated] = useState("false");
 
 
   return (
@@ -29,29 +29,44 @@ function App() {
         <div>
           <label>
             Full Name
-            <input name="name" type="text" placeholder="Full Name" value= {name} />
+            <input 
+              onChange = {(e) => {setName(e.target.value);
+              }}
+              name="name" type="text" placeholder="Full Name" value= {name} />
           </label>
 
           <label>
             Profile Image
-            <input name="image" type="url" placeholder="Profile Image" value = {image}/>
+            <input 
+            onChange = {(e) => {setImage(e.target.value);
+            }}
+            name="image" type="url" placeholder="Profile Image" value = {image}/>
           </label>
 
           <label>
             Phone
-            <input name="phone" type="tel" placeholder="Phone" value = {tel}/>
+            <input 
+            onChange = {(e) => {setTel(e.target.value);
+            }}
+            name="phone" type="tel" placeholder="Phone" value = {tel}/>
           </label>
 
           <label>
             Email
-            <input name="email" type="email" placeholder="Email" value = {email}/>
+            <input
+            onChange = {(e) => {setEmail(e.target.value);
+            }} 
+            name="email" type="email" placeholder="Email" value = {email}/>
           </label>
         </div>
 
         <div>
           <label>
             Program
-            <select name="program" value = {"program"}>
+            <select 
+            onChange = {(e) => {setProgram(e.target.value);
+            }} 
+            name="program" value = {program}>
               <option value="">-- None --</option>
               <option value="Web Dev">Web Dev</option>
               <option value="UXUI">UXUI</option>
@@ -61,7 +76,10 @@ function App() {
 
           <label>
             Graduation Year
-            <input value = {graduationYear}
+            <input 
+              onChange = {(e) => {setGraduationYear(e.target.value);
+              }} 
+              value = {graduationYear}
               name="graduationYear"
               type="number"
               placeholder="Graduation Year"
@@ -74,7 +92,10 @@ function App() {
 
           <label>
             Graduated
-            <input name="graduated" type="checkbox" value= {graduated} />
+            <input 
+              onChange = {(e) => {setGraduated(e.target.checked);
+              }} 
+              name="graduated" type="checkbox" checked= {graduated} /> {/* Change "value" and put "checked" instead. No issue for the end user if I forgot to do it (for now)*/}
           </label>
 
           <button type="submit">Add Student</button>
