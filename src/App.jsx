@@ -9,6 +9,15 @@ import studentsData from "./assets/students.json";
 function App() {
   const [students, setStudents] = useState(studentsData);
 
+  //ITERATION 1
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [tel, setTel] = useState("");
+  const [email, setEmail] = useState("");
+  const [program, setProgram] = useState("-- None --");
+  const [graduationYear, setGraduationYear] = useState(2023);
+  const [graduated, setGraduate] = useState("false");
+
 
   return (
     <div className="App pt-20">
