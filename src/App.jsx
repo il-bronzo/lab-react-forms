@@ -33,6 +33,8 @@ function App() {
 
     const studentsCopy = [... students];
     studentsCopy.push(newStudent);
+
+    setStudents(studentsCopy);
   }
 
   return (
