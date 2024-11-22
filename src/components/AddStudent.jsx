@@ -22,7 +22,7 @@ function AddStudent(props) {
       graduated: graduated
     };
 
-    props.addStudent(newStudent);
+    props.handleAddStudent(newStudent);
 
   }
     return (

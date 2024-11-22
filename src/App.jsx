@@ -37,11 +37,11 @@ function App() {
 
     setStudents(studentsCopy);
   } */
-    const addStudent = (student) => {
+    const handleAddStudent = (student) => {
       const updatedStudents = [... students, student];
       setStudents(updatedStudents);
     }
-    
+
   return (
     <div className="App pt-20">
       <Navbar />
@@ -49,7 +49,7 @@ function App() {
       {/* FORM */}
       {/* content removed during iteration 4 */}
       {/* FORM END */}
-      <AddStudent addStudent={addStudent} />
+      <AddStudent handleAddStudent={handleAddStudent} />
 
 
       {/* TABLE/LIST HEADER */}
