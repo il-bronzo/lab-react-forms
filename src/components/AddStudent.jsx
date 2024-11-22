@@ -23,8 +23,13 @@ function AddStudent(props) {
     };
 
     props.handleAddStudent(newStudent);
-
   }
+
+      //BONUS ITERATION 5
+    /*   const handleStudent = (e) => {
+        let name = e.target.name;
+        setState
+    } */
     return (
         <form onSubmit = {handleSubmit}> {/* onSubmit to be put here and not inside the button of type="sumbit" */}
         <span>Add a Student</span>
